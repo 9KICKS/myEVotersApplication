@@ -2,11 +2,10 @@ package data.models;
 
 public class Vote {
     private int voteID;
-    private final User user;
     private final Candidate candidate;
+    private String user;
 
-    public Vote(int userID, Candidate candidate) {
-        this.user = new User(userID);
+    public Vote(String candidateName, Candidate candidate) {
         this.candidate = candidate;
     }
 
@@ -18,11 +17,15 @@ public class Vote {
         return voteID;
     }
 
-    public User getUser() {
-        return user;
-    }
-
     public Candidate getCandidate() {
         return candidate;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getUser() {
+        return user;
     }
 }

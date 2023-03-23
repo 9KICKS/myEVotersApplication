@@ -29,7 +29,7 @@ public class VoteRepositoryImpl implements VoteRepository {
     }
 
     @Override
-    public List<Vote> getVotes() {
+    public List<Vote> getAllVotes() {
         return new ArrayList<>(votes);
     }
 

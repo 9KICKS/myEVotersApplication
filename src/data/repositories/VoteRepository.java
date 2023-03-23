@@ -6,12 +6,8 @@ import java.util.List;
 
 public interface VoteRepository {
     Vote addVote(Vote vote);
-
     Vote getVote(int voteId);
-
-    List<Vote> getVotes();
-
+    List<Vote> getAllVotes();
     List<Vote> getVotesByUser(User user);
-
     void deleteVote(int voteId);
 }

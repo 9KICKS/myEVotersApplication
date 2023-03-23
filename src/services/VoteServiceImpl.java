@@ -18,19 +18,19 @@ public class VoteServiceImpl implements VoteService {
 
     @Override
     public CastVoteResponse castVote(CastVoteRequest request) {
-        int candidateId = request.getCandidateId();
-        Candidate candidate = findCandidateById(candidateId);
+        String candidateName = request.getCandidateName();
+        Candidate candidate = findCandidateByName(candidateName);
         if (candidate == null) {
-            return new CastVoteResponse(false, "Invalid Candidate ID.");
+            return new CastVoteResponse(false, "Invalid Candidate name.");
         }
-        Vote vote = new Vote(request.getUserId(), candidate);
+        Vote vote = new Vote(request.getCandidateName(), candidate);
         votes.add(vote);
         return new CastVoteResponse(true, "Vote cast successfully.");
     }
 
-    private Candidate findCandidateById(int candidateId) {
+    private Candidate findCandidateByName(String candidateName) {
         for (Candidate candidate : candidates) {
-            if (candidate.getCandidateID() == candidateId) {
+            if (candidate.getName().equals(candidateName)) {
                 return candidate;
             }
         }
