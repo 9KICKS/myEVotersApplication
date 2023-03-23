@@ -6,16 +6,16 @@ public class RegisterUserRequest {
     private String stateOfBirth;
     private String dateOfBirth;
     private String phoneNumber;
-    private String username;
+    private String vin;
     private String password;
 
-    public RegisterUserRequest(String firstName, String lastName, String stateOfBirth, String dateOfBirth, String phoneNumber, String username, String password) {
+    public RegisterUserRequest(String firstName, String lastName, String stateOfBirth, String dateOfBirth, String phoneNumber, String vin, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.stateOfBirth = stateOfBirth;
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
-        this.username = username;
+        this.vin = vin;
         this.password = password;
     }
 
@@ -59,12 +59,12 @@ public class RegisterUserRequest {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getUsername() {
-        return username;
+    public String getVin() {
+        return vin;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setVin(String vin) {
+        this.vin = vin;
     }
 
     public String getPassword() {

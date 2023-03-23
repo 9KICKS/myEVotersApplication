@@ -1,21 +1,19 @@
 package dtos.responses;
 
-import data.models.User;
-
 public class RegisterUserResponse {
-    private User user;
+    private String user;
     private String message;
 
-    public RegisterUserResponse(User user, String message) {
+    public RegisterUserResponse(String message, String user) {
         this.user = user;
         this.message = message;
     }
 
-    public User getUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(String user) {
         this.user = user;
     }
 
