@@ -1,7 +1,7 @@
 package data.models;
 
 public class User {
-    private int userID;
+    private String vin;
     private String firstName;
     private String lastName;
     private String stateOfBirth;
@@ -20,16 +20,16 @@ public class User {
         this.password = password;
     }
 
-    public User(int userID) {
-        this.userID = userID;
+    public User(String vin) {
+        this.vin = vin;
     }
 
-    public int getUserID() {
-        return userID;
+    public String getVin() {
+        return vin;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setVin(String vin) {
+        this.vin = vin;
     }
 
     public String getFirstName() {

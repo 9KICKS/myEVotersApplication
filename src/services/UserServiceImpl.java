@@ -1,23 +1,35 @@
 package services;
 
 import data.models.User;
+import data.repositories.UserRepository;
+import data.repositories.UserRepositoryImpl;
 import dtos.requests.LoginUserRequest;
 import dtos.requests.RegisterUserRequest;
-import java.util.ArrayList;
+import dtos.responses.LoginUserResponse;
+import dtos.responses.RegisterUserResponse;
+import javax.swing.*;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    private final List<User> users;
-
-    public UserServiceImpl() {
-        this.users = new ArrayList<>();
-    }
+    UserRepository userRepository = new UserRepositoryImpl();
+    private final List<User> users = userRepository.getAllUsers();
 
     @Override
-    public User registerUser(RegisterUserRequest request) {
-        String username = request.getUsername();
+    public RegisterUserResponse registerUser(RegisterUserRequest request) {
+        try {
+            for (User user : users) {
+                if (user.getVin()==(request.getVin())) {
+                    JOptionPane.showMessageDialog(null, "VIN already exists, try a valid VIN.");
+                    throw new IllegalArgumentException("VIN already exists");
+                }
+                if (user.getPassword().equals(request.getPassword())) {
+                    JOptionPane.showMessageDialog(null, "Password already exists, try a valid password.");
+                    throw new IllegalArgumentException("Password already exists");
+                }
+            }
+        String vin = request.getVin();
         for (User user : users) {
-            if (user.getUsername().equals(username)) {
+            if (user.getVin().equals(vin)) {
                 return null;
             }
         }
@@ -27,22 +39,31 @@ public class UserServiceImpl implements UserService {
                 request.getStateOfBirth(),
                 request.getDateOfBirth(),
                 request.getPhoneNumber(),
-                request.getUsername(),
+                request.getVin(),
                 request.getPassword()
         );
         users.add(newUser);
-        return newUser;
+        String message = "User sucessfully created.";
+        JOptionPane.showMessageDialog(null, message);
+        return new RegisterUserResponse(message, newUser.getVin());
+    } catch (IllegalArgumentException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+            throw ex;
+        }
     }
 
     @Override
-    public User loginUser(LoginUserRequest request) {
-        String username = request.getUsername();
-        String password = request.getPassword();
-        for (User user : users) {
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                return user;
+    public LoginUserResponse loginUser(LoginUserRequest request) {
+        try {
+            for (User user : users) {
+                if (user.getUsername().equals(request.getVin()) && user.getPassword().equals(request.getPassword())) {
+                    JOptionPane.showMessageDialog(null, "Login successful.");
+                }
             }
+        } catch (IllegalArgumentException ex) {
+            JOptionPane.showMessageDialog(null, "Incorrect VIN or password.");
+            throw ex;
         }
-        return null;
+        return new LoginUserResponse("Login successful.");
     }
 }

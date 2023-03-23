@@ -1,11 +1,11 @@
 package services;
 
-import data.models.User;
 import dtos.requests.LoginUserRequest;
 import dtos.requests.RegisterUserRequest;
+import dtos.responses.LoginUserResponse;
+import dtos.responses.RegisterUserResponse;
 
 public interface UserService {
-    User registerUser(RegisterUserRequest request);
-
-    User loginUser(LoginUserRequest request);
+    RegisterUserResponse registerUser(RegisterUserRequest request);
+    LoginUserResponse loginUser(LoginUserRequest request);
 }

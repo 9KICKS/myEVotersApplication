@@ -9,15 +9,15 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User addUser(User user) {
-        user.setUserID(users.size() + 1);
+        user.setVin(String.valueOf(users.size() + 1));
         users.add(user);
         return user;
     }
 
     @Override
-    public User getUser(int userId) {
+    public User getUser(String vin) {
         for (User user : users) {
-            if (user.getUserID() == userId) {
+            if (user.getVin().equals(vin)) {
                 return user;
             }
         }
@@ -35,12 +35,12 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public List<User> getUsers() {
+    public List<User> getAllUsers() {
         return new ArrayList<>(users);
     }
 
     @Override
-    public void deleteUser(int userId) {
-        users.removeIf(user -> user.getUserID() == userId);
+    public void deleteUser(String vin) {
+        users.removeIf(user -> user.getVin().equals(vin));
     }
 }

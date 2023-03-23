@@ -5,12 +5,8 @@ import java.util.List;
 
 public interface UserRepository {
     User addUser(User user);
-
-    User getUser(int userId);
-
+    User getUser(String vin);
     User getUserByUsername(String username);
-
-    List<User> getUsers();
-
-    void deleteUser(int userId);
+    List<User> getAllUsers();
+    void deleteUser(String vin);
 }
