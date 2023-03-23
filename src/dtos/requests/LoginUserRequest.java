@@ -1,16 +1,16 @@
 package dtos.requests;
 
 public class LoginUserRequest {
-    private final String username;
+    private final String vin;
     private final String password;
 
-    public LoginUserRequest(String username, String password) {
-        this.username = username;
+    public LoginUserRequest(String vin, String password) {
+        this.vin = vin;
         this.password = password;
     }
 
-    public String getUsername() {
-        return username;
+    public String getVin() {
+        return vin;
     }
 
     public String getPassword() {
