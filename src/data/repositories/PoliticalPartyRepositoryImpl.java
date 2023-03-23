@@ -25,4 +25,14 @@ public class PoliticalPartyRepositoryImpl implements PoliticalPartyRepository {
         }
         return null;
     }
+
+    @Override
+    public PoliticalParty getPartyByName(String name) {
+        for (PoliticalParty party : parties) {
+            if (party.getName().equals(name)) {
+                return party;
+            }
+        }
+        return null;
+    }
 }

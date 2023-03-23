@@ -16,8 +16,4 @@ public class PoliticalParty {
     public String getName() {
         return name;
     }
-
-    public boolean contains(String party) {
-        return true;
-    }
 }
