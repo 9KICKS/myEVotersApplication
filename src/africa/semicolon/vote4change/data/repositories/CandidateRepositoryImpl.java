@@ -1,6 +1,6 @@
-package data.repositories;
+package africa.semicolon.vote4change.data.repositories;
 
-import data.models.Candidate;
+import africa.semicolon.vote4change.data.models.Candidate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,12 +27,12 @@ public class CandidateRepositoryImpl implements CandidateRepository {
     }
 
     @Override
-    public void updateCandidate(Candidate candidate) {
-        for (int i = 0; i < candidates.size(); i++) {
-            if (candidates.get(i).getCandidateID() == candidate.getCandidateID()) {
-                candidates.set(i, candidate);
-                break;
+    public Candidate getCandidateByName(String name) {
+        for (Candidate candidate : candidates) {
+            if (candidate.getName().equals(name)) {
+                return candidate;
             }
         }
+        return null;
     }
 }

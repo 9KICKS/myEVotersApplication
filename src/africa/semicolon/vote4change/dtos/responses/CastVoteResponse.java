@@ -1,4 +1,4 @@
-package dtos.responses;
+package africa.semicolon.vote4change.dtos.responses;
 
 public class CastVoteResponse {
     private final boolean voteCastSuccessful;

@@ -1,16 +1,13 @@
-package data.models;
+package africa.semicolon.vote4change.data.models;
 
 public class Candidate {
     private int candidateID;
     private String name;
     private String politicalParty;
-    private int voteCount;
 
-    public Candidate(int candidateID, String name, String politicalParty, int voteCount) {
-        this.candidateID = candidateID;
+    public Candidate(String name, String politicalParty) {
         this.name = name;
         this.politicalParty = politicalParty;
-        this.voteCount = voteCount;
     }
 
     public int getCandidateID() {
@@ -35,13 +32,5 @@ public class Candidate {
 
     public void setPoliticalParty(PoliticalParty politicalParty) {
         this.politicalParty = String.valueOf(politicalParty);
-    }
-
-    public int getVoteCount() {
-        return voteCount;
-    }
-
-    public void setVoteCount(int voteCount) {
-        this.voteCount = voteCount;
     }
 }
