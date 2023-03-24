@@ -1,9 +1,9 @@
-package Controllers;
+package africa.semicolon.vote4change.Controllers;
 
-import dtos.requests.LoginUserRequest;
-import dtos.requests.RegisterUserRequest;
-import services.UserService;
-import services.UserServiceImpl;
+import africa.semicolon.vote4change.dtos.requests.LoginUserRequest;
+import africa.semicolon.vote4change.dtos.requests.RegisterUserRequest;
+import africa.semicolon.vote4change.services.UserService;
+import africa.semicolon.vote4change.services.UserServiceImpl;
 
 public class UserController {
     private final UserService userService = new UserServiceImpl();
