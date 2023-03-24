@@ -1,12 +1,12 @@
-package services;
+package africa.semicolon.vote4change.services;
 
-import data.models.User;
-import data.repositories.UserRepository;
-import data.repositories.UserRepositoryImpl;
-import dtos.requests.LoginUserRequest;
-import dtos.requests.RegisterUserRequest;
-import dtos.responses.LoginUserResponse;
-import dtos.responses.RegisterUserResponse;
+import africa.semicolon.vote4change.data.models.User;
+import africa.semicolon.vote4change.data.repositories.UserRepository;
+import africa.semicolon.vote4change.data.repositories.UserRepositoryImpl;
+import africa.semicolon.vote4change.dtos.requests.LoginUserRequest;
+import africa.semicolon.vote4change.dtos.requests.RegisterUserRequest;
+import africa.semicolon.vote4change.dtos.responses.LoginUserResponse;
+import africa.semicolon.vote4change.dtos.responses.RegisterUserResponse;
 import javax.swing.*;
 import java.util.List;
 

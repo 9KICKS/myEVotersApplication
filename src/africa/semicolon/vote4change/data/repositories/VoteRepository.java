@@ -1,7 +1,7 @@
-package data.repositories;
+package africa.semicolon.vote4change.data.repositories;
 
-import data.models.User;
-import data.models.Vote;
+import africa.semicolon.vote4change.data.models.User;
+import africa.semicolon.vote4change.data.models.Vote;
 import java.util.List;
 
 public interface VoteRepository {

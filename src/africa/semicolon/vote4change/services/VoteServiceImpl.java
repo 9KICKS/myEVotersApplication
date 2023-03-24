@@ -1,9 +1,9 @@
-package services;
+package africa.semicolon.vote4change.services;
 
-import data.models.Candidate;
-import data.models.Vote;
-import dtos.requests.CastVoteRequest;
-import dtos.responses.CastVoteResponse;
+import africa.semicolon.vote4change.data.models.Candidate;
+import africa.semicolon.vote4change.data.models.Vote;
+import africa.semicolon.vote4change.dtos.requests.CastVoteRequest;
+import africa.semicolon.vote4change.dtos.responses.CastVoteResponse;
 import java.util.ArrayList;
 import java.util.List;
 
