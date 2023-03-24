@@ -1,4 +1,4 @@
-package data.models;
+package africa.semicolon.vote4change.data.models;
 
 public class PoliticalParty {
     private final int partyID;

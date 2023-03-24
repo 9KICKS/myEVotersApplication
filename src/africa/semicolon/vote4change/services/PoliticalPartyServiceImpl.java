@@ -1,6 +1,6 @@
-package services;
+package africa.semicolon.vote4change.services;
 
-import data.models.PoliticalParty;
+import africa.semicolon.vote4change.data.models.PoliticalParty;
 import java.util.List;
 
 public class PoliticalPartyServiceImpl implements PoliticalPartyService {
